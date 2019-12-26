@@ -1,16 +1,14 @@
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
+// Definition for singly-linked list.
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+
 /**
  * @param {ListNode} listOne
  * @param {ListNode} listTwo
  * @return {ListNode}
  */
-
 var addTwoNumbers = function(l1, l2) {
   let combined = 0,
     placeholder = null,
@@ -18,22 +16,22 @@ var addTwoNumbers = function(l1, l2) {
     result,
     curr;
 
-  while (l1 !== null || l2 !== null) {
+  while (l1 || l2) {
     // Adds the current index of each together if a value exists or defaults value to 0
-    combined = (l1 !== null ? l1.val : 0) + (l2 !== null ? l2.val : 0);
+    combined = (l1 ? l1.val : 0) + (l2 ? l2.val : 0);
 
     // Iterates l1 to next node
-    if (l1 !== null) {
+    if (l1) {
       l1 = l1.next;
     }
 
     // Iterates l2 to next node
-    if (l2 !== null) {
+    if (l2) {
       l2 = l2.next;
     }
 
     // Adds previous placeholder if one exists to the current value
-    if (placeholder !== null) {
+    if (placeholder) {
       combined += placeholder;
       placeholder = null;
     }
@@ -56,30 +54,9 @@ var addTwoNumbers = function(l1, l2) {
   }
 
   // Append extra node if last computation returned a two digit number
-  if (placeholder !== null) {
-    curr.next = new ListNode(placeholder);
-    curr = curr.next;
-  }
+  curr.next = placeholder ? new ListNode(placeholder) : null;
 
   return result;
 };
 
-/**
- * Test Cases
- *
- * Test One:
- * [1,8]
- * [0]
- *
- * Test Two:
- * [2,4,3]
- * [5,6,4]
- *
- * Test Three:
- * [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
- * [5,6,4]
- *
- * Test Four:
- * [5]
- * [5]
- */
+addTwoNumbers([2, 4, 3], [5, 6, 4]);
