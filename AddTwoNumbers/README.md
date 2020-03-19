@@ -17,5 +17,5 @@ Memory Usage: `38.7` MB, less than `30.55`% of JavaScript online submissions for
 
 ## Python Submission
 
-Runtime: 60 ms, faster than 96.39% of Python3 online submissions for Add Two Numbers.
-Memory Usage: 12.6 MB, less than 100.00% of Python3 online submissions for Add Two Numbers.
+Runtime: `60` ms, faster than `96.39`% of Python3 online submissions for Add Two Numbers.
+Memory Usage: `12.6` MB, less than `100.00`% of Python3 online submissions for Add Two Numbers.
